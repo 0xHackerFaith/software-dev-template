@@ -2,6 +2,8 @@
 
 Go + Gin 最简 HTTP API 脚手架。
 
+杭州玄晖软件工作室出品：https://codex-inc.cn/
+
 ## 包含内容
 
 - `cmd/server`: HTTP 服务入口
@@ -28,4 +30,3 @@ PORT=3000 go run ./cmd/server
 ```bash
 go test ./...
 ```
-

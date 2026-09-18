@@ -16,6 +16,10 @@ func NewRouter() *gin.Engine {
 		})
 	})
 
+	router.GET("/hello", func(c *gin.Context) {
+		c.String(http.StatusOK, "Hello World !")
+	})
+
 	router.GET("/healthz", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"status": "ok",

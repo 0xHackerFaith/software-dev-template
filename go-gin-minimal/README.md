@@ -9,6 +9,7 @@ Go + Gin 最简 HTTP API 脚手架。
 - `cmd/server`: HTTP 服务入口
 - `internal/http`: Gin 路由
 - `GET /`: 服务基本信息
+- `GET /hello`: 返回 `Hello World !`
 - `GET /healthz`: 健康检查
 - `router_test.go`: 路由测试
 
@@ -23,6 +24,12 @@ go run ./cmd/server
 
 ```bash
 PORT=3000 go run ./cmd/server
+```
+
+访问接口：
+
+```bash
+curl http://localhost:8080/hello
 ```
 
 ## 测试

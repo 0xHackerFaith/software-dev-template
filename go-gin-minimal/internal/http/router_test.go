@@ -27,3 +27,19 @@ func TestHealthzReturnsOK(t *testing.T) {
 		t.Fatalf("expected status ok, got %q", body["status"])
 	}
 }
+
+func TestHelloReturnsHelloWorld(t *testing.T) {
+	router := NewRouter()
+
+	response := httptest.NewRecorder()
+	request := httptest.NewRequest(http.MethodGet, "/hello", nil)
+	router.ServeHTTP(response, request)
+
+	if response.Code != http.StatusOK {
+		t.Fatalf("expected status %d, got %d", http.StatusOK, response.Code)
+	}
+
+	if response.Body.String() != "Hello World !" {
+		t.Fatalf("expected Hello World !, got %q", response.Body.String())
+	}
+}
